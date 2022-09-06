@@ -5,3 +5,71 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+def check_ingredient(ingredient)
+  puts "-- Looking for #{ingredient}"
+  #If ingredient already exist on DB, find it otherwise create it
+  if Ingredient.find_by(name: ingredient).nil?
+    puts "--- Creating #{ingredient}"
+    url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=#{ingredient}"
+    ingredient_info__serialized = URI.open(url).read
+    ingredient_info = JSON.parse(ingredient_info__serialized)
+    ingredient_info["ingredients"][0]["strAlcohol"] = 'Yes' ? alcohol = true : alcohol = false
+    ps = PragmaticSegmenter::Segmenter.new(text: ingredient_info["ingredients"][0]["strDescription"])
+    desc = "#{ps.segment[0]} #{ps.segment[1]} #{ps.segment[2]}"
+    ingredient = Ingredient.create(name: ingredient, spirit: alcohol, description: desc)
+    ingredient.save
+  else
+    puts "--- #{ingredient} already present"
+    ingredient = Ingredient.find_by(name: ingredient)
+  end
+  return ingredient
+end
+
+
+def add_cocktails(cocktail)
+  puts "================================="
+  puts "Searching for #{cocktail}"
+  url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=#{cocktail}"
+  cocktail_info_serialized = URI.open(url).read
+  cocktail_info = JSON.parse(cocktail_info_serialized)
+  if cocktail_info["drinks"].nil?
+    puts "Didn't find it"
+  else
+    new_cocktail = Cocktail.create(name: cocktail_info["drinks"][0]["strDrink"],
+                                   recipe: cocktail_info["drinks"][0]["strInstructions"],
+                                   category: cocktail_info["drinks"][0]["strIBA"])
+    new_cocktail.save
+    p new_cocktail
+
+    (1..15).each do |index|
+      ing = cocktail_info["drinks"][0]["strIngredient#{index}"]
+      if ing.nil?
+        break
+      else
+        # p check_ingredient(ing)
+        ingredient = check_ingredient(ing)
+        CocktailIngredient.create(cocktail: new_cocktail, ingredient: ingredient)
+      end
+    end
+  end
+end
+
+
+
+puts "Create some users"
+users_list = ["nico", "spencer", "marcus", "preston"]
+
+users_list.each do |user|
+  puts "#{user}@homemixed.club"
+  user_to_create = User.create(email: "#{user}@homemixed.club", password: "123456", username: user, dob: "07/07/1972".to_date)
+  user_to_create.save
+end
+
+puts "Create some Cocktails"
+
+cocktails = ["Fashioned", "Cosmopolitan", "margarita", "Mojito", "Old Fashioned", "Bloody Mary", "Manhattan", "Caipirinha", "Mai Tai", "Tequila Sunrise", "Pina Colada", "Irish Coffee", "Rum and Coke", "Sangria", "Screwdriver", "Espresso Martini", "Aperol Spritz", "French 75", "Paloma", "Brandon and Will's Coke Float"  ]
+
+cocktails.each do |cocktail|
+  add_cocktails(cocktail)
+end
