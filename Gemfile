@@ -81,3 +81,4 @@ group :test do
 end
 
 gem "open-uri"
+gem "cloudinary"
