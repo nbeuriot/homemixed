@@ -1,7 +1,10 @@
 nav {
   height: 55px;
   overflow: scroll;
-  background: #eae8e89d;
+  background: #eae5e59d;
+  position: fixed; /* Set the navbar to fixed position */
+  bottom: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
 }
 
 nav ul {
@@ -16,7 +19,7 @@ nav ul {
 
 nav a {
   display: block;
-  color: rgba(158, 154, 154, 0.664);
+  color: rgba(132, 132, 132, 0.795);
   font-size: 15px;
   font-weight: lighter;
   text-decoration: none;
