@@ -179,6 +179,9 @@ GEM
       uri
     orm_adapter (0.5.0)
     pg (1.4.3)
+    pg_search (2.3.6)
+      activerecord (>= 5.2)
+      activesupport (>= 5.2)
     pragmatic_segmenter (0.3.23)
       unicode
     public_suffix (5.0.0)
@@ -306,6 +309,7 @@ DEPENDENCIES
   json
   open-uri
   pg (~> 1.1)
+  pg_search
   pragmatic_segmenter
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
