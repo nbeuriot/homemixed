@@ -79,7 +79,7 @@ end
 
 puts "Create some Cocktails"
 
-cocktails = ["Cosmopolitan", "margarita", "Mojito", "Old Fashioned", "Bloody Mary", "Manhattan", "Caipirinha", "Mai Tai", "Tequila Sunrise", "Pina Colada", "Irish Coffee", "Rum and Coke", "Sangria", "Screwdriver", "Espresso Martini", "Aperol Spritz", "French 75", "Paloma", "Brandon and Will's Coke Float"  ]
+cocktails = ["cosmopolitan", "margarita", "Mojito", "Old Fashioned", "Bloody Mary", "Manhattan", "Caipirinha", "Mai Tai", "Tequila Sunrise", "Pina Colada", "Irish Coffee", "Rum and Coke", "Sangria", "Screwdriver", "Espresso Martini", "Aperol Spritz", "French 75", "Paloma", "Brandon and Will's Coke Float"  ]
 
 cocktails.each do |cocktail|
   add_cocktails(cocktail)
