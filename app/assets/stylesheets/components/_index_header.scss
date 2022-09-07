@@ -1,0 +1,37 @@
+.index-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    font-size: 36px;
+    font-weight: 600 !important;
+}
+
+.boxword {
+            background-color: #592699;
+            height: auto;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            margin-right: 10px;
+            margin-left: 10px;
+    
+}
+
+.boxword-clear {
+    background-color: #ffffff;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+
+}
