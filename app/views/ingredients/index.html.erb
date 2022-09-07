@@ -1,2 +1,31 @@
+<div class="contianer">
+  <!-- Our top buttons to filter spirits or ingredients -->
+  <!-- Have to figure out how to dynamically hide / display our grids -->
+  <div class="d-flex">
+    <p>Spirits</p>
+    <p>Ingredients</p>
+  </div>
+  <div>
+    <p>Our search bar is going here</p>
+  </div>
 
+  <!-- Our flex container to hold our cards side by side -->
+  <p>Base Spirits</p>
+  <div class="card-container">
+    <!-- Our spirits cards that will be displayed in a grid -->
+    <%@spirits.each do |spirit| %>
+      <!-- these cards will have the background image we chose with the text centered -->
+      <div><%= spirit.name %></div>
+    <% end %>
+  </div>
 
+  <p>Ingredients</p>
+  <div class="card-container">
+    <!-- Our ingredients cards that will be displayed in a grid -->
+    <%@ingredients.each do |ingredient| %>
+      <!-- these cards will have the background image we chose with the text centered -->
+      <div><%= ingredient.name %></div>
+    <% end %>
+  </div>
+
+</div>
