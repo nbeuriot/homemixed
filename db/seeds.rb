@@ -14,7 +14,7 @@ def check_ingredient(ingredient)
     url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=#{ingredient}"
     ingredient_info__serialized = URI.open(url).read
     ingredient_info = JSON.parse(ingredient_info__serialized)
-    ingredient_info["ingredients"][0]["strAlcohol"] = 'Yes' ? alcohol = true : alcohol = false
+    ingredient_info["ingredients"][0]["strAlcohol"] == 'Yes' ? alcohol = true : alcohol = false
     ps = PragmaticSegmenter::Segmenter.new(text: ingredient_info["ingredients"][0]["strDescription"])
     desc = "#{ps.segment[0]} #{ps.segment[1]} #{ps.segment[2]}"
     ingredient = Ingredient.create(name: ingredient, spirit: alcohol, description: desc)
