@@ -17,13 +17,20 @@ def check_ingredient(ingredient)
     ingredient_info["ingredients"][0]["strAlcohol"] == 'Yes' ? alcohol = true : alcohol = false
     ps = PragmaticSegmenter::Segmenter.new(text: ingredient_info["ingredients"][0]["strDescription"])
     desc = "#{ps.segment[0]} #{ps.segment[1]} #{ps.segment[2]}"
-    ingredient = Ingredient.create(name: ingredient, spirit: alcohol, description: desc)
-    ingredient.save
+    new_ingredient = Ingredient.create(name: ingredient, spirit: alcohol, description: desc)
+    file = "app/assets/images/ingredients/#{ingredient}.jpg"
+    if File.exist?(file)
+      file = File.open(file)
+      puts "Files exist"
+      new_ingredient.photo.attach(io: file, filename: File.basename(file), content_type: "image/jpeg")
+    end
+    new_ingredient.save
+    return new_ingredient
   else
     puts "--- #{ingredient} already present"
     ingredient = Ingredient.find_by(name: ingredient)
+    return ingredient
   end
-  return ingredient
 end
 
 
@@ -39,6 +46,9 @@ def add_cocktails(cocktail)
     new_cocktail = Cocktail.create(name: cocktail_info["drinks"][0]["strDrink"],
                                    recipe: cocktail_info["drinks"][0]["strInstructions"],
                                    category: cocktail_info["drinks"][0]["strIBA"])
+    puts "- Adding pictures"
+    file = File.open("app/assets/images/cocktails/#{cocktail}.jpg")
+    new_cocktail.photo.attach(io: file, filename: File.basename(file), content_type: "image/jpeg")
     new_cocktail.save
     p new_cocktail
 
@@ -50,6 +60,7 @@ def add_cocktails(cocktail)
         # p check_ingredient(ing)
         ingredient = check_ingredient(ing)
         CocktailIngredient.create(cocktail: new_cocktail, ingredient: ingredient)
+
       end
     end
   end
@@ -68,7 +79,7 @@ end
 
 puts "Create some Cocktails"
 
-cocktails = ["Fashioned", "Cosmopolitan", "margarita", "Mojito", "Old Fashioned", "Bloody Mary", "Manhattan", "Caipirinha", "Mai Tai", "Tequila Sunrise", "Pina Colada", "Irish Coffee", "Rum and Coke", "Sangria", "Screwdriver", "Espresso Martini", "Aperol Spritz", "French 75", "Paloma", "Brandon and Will's Coke Float"  ]
+cocktails = ["Cosmopolitan", "margarita", "Mojito", "Old Fashioned", "Bloody Mary", "Manhattan", "Caipirinha", "Mai Tai", "Tequila Sunrise", "Pina Colada", "Irish Coffee", "Rum and Coke", "Sangria", "Screwdriver", "Espresso Martini", "Aperol Spritz", "French 75", "Paloma", "Brandon and Will's Coke Float"  ]
 
 cocktails.each do |cocktail|
   add_cocktails(cocktail)
