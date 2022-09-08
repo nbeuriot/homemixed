@@ -77,9 +77,15 @@ users_list.each do |user|
   user_to_create.save
 end
 
+ingredients = ["Rum", "Gin", "Whiskey", "Tequila", "Brandy", "Vodka"]
+
+ingredients.each do |ingredient|
+  check_ingredient(ingredient)
+end
+
 puts "Create some Cocktails"
 
-cocktails = ["Cosmopolitan", "margarita", "Mojito", "Old Fashioned", "Bloody Mary", "Manhattan", "Caipirinha", "Mai Tai", "Tequila Sunrise", "Pina Colada", "Irish Coffee", "Rum and Coke", "Sangria", "Screwdriver", "Espresso Martini", "Aperol Spritz", "French 75", "Paloma", "Brandon and Will's Coke Float"  ]
+cocktails = ["cosmopolitan", "margarita", "Mojito", "Old Fashioned", "Bloody Mary", "Manhattan", "Caipirinha", "Mai Tai", "Tequila Sunrise", "Pina Colada", "Irish Coffee", "Rum and Coke", "Sangria", "Screwdriver", "Espresso Martini", "Aperol Spritz", "French 75", "Paloma", "Brandon and Will's Coke Float"  ]
 
 cocktails.each do |cocktail|
   add_cocktails(cocktail)
