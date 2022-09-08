@@ -44,7 +44,7 @@
       <!-- these cards will have the background image we chose with the text centered -->
 
       <div data-controller="add-to-bar" data-action="click->add-to-bar#create" data-add-to-bar-id-value="<%= spirit.id %>" class="spirit-cards">
-        <div class="spirit-cards" style="background-image: url('<%= cl_image_path(spirit.photo.key) %>');">
+        <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path(spirit.photo.key) %>');">
           <%= spirit.name %>
         </div>
       </div>

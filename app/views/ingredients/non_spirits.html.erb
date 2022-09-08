@@ -16,11 +16,11 @@
 
   <p class="home-page-h2">Ingredients</p>
   <!-- Our flex container to hold our cards side by side -->
-  <div class="card-container">
+  <div class="center-grid">
     <!-- Our spirits cards that will be displayed in a grid -->
     <%@ingredients.each do |ingredient| %>
       <!-- these cards will have the background image we chose with the text centered -->
-      <div><%= ingredient %></div>
+      <div class="ingredient_card"><%= ingredient %></div>
     <% end %>
   </div>
 </div>
