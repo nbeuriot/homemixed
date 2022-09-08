@@ -11,7 +11,9 @@
       <li>
         <a href="<%= pages_path %>">
         <i class="fa-solid fa-user-tie fa-lg"></i></a>
-        <span class="badge"> <%= current_user.ingredients.count %> </span>
+        <% if user_signed_in? %>
+          <span class="badge"> <%= current_user.ingredients.count %> </span>
+        <% end %>
       </li>
     </ul>
   </div>
