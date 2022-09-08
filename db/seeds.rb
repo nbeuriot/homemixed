@@ -21,8 +21,12 @@ def check_ingredient(ingredient)
     file = "app/assets/images/ingredients/#{ingredient}.jpg"
     if File.exist?(file)
       file = File.open(file)
-      puts "Files exist"
+      puts "---- Using Files in local"
       new_ingredient.photo.attach(io: file, filename: File.basename(file), content_type: "image/jpeg")
+    else
+      puts "---- Using Files from Unsplash"
+      file = URI.open("https://source.unsplash.com/random/100x100/?#{ingredient}")
+      new_ingredient.photo.attach(io: file, filename: "#{ingredient}.jpg", content_type: "image/jpeg")
     end
     new_ingredient.save
     return new_ingredient
