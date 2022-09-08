@@ -7,6 +7,13 @@ class IngredientsController < ApplicationController
     ingredient_objects.each do |object|
       if most_popular.include?(object.name)
         @spirits << object
+        # PG search by name and spirits
+        if params[:query]
+          @ingredients = Ingredient.where(spirit: true).search_by_name_and_spirit(params[:query])
+          # @ingredients = Ingredient.search_by_name_and_spirit(params[:query])
+        # else
+        #   @ingredients = Ingredient.all
+        end
       end
     end
   end
