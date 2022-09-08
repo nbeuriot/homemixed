@@ -19,8 +19,9 @@
     <!-- Our spirits cards that will be displayed in a grid -->
     <%@spirits.each do |spirit| %>
       <!-- these cards will have the background image we chose with the text centered -->
-      <div class="spirit-cards">
-        <div><%= spirit %></div>
+      <div class="spirit-cards" style="background-image: url('<%= cl_image_path(spirit.photo.key) %>');">
+        <div>
+        <%= spirit.name %></div>
       </div>
     <% end %>
   </div>

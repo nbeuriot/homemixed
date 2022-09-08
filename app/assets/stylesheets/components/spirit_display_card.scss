@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     padding-top: 15px;
-    
+
 
 }
 
@@ -21,6 +21,7 @@
     color: #FFFFFF;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     background-color: black;
+    background-size: cover;
   }
 
   .spirit-image
@@ -29,35 +30,35 @@
   }
 
 
-  
+
 //   // Smallest device
 //   @media (min-width: 100px) and (max-width: 575px) {
 //     .spirit-cards {
 //       grid-template-columns: 1fr;
 //     }
 //   }
-  
+
 //   // Small devices (landscape phones, 576px and up)
 //   @media (min-width: 576px) {
 //     .spirit-cards {
 //       grid-template-columns: 1fr;
 //     }
 //   }
-  
+
 //   // Medium devices (tablets, 768px and up)
 //   @media (min-width: 768px) {
 //     .spirit-cards {
 //       grid-template-columns: 1fr 1fr;
 //     }
 //   }
-  
+
 //   // Large devices (desktops, 992px and up)
 //   @media (min-width: 992px) {
 //     .spirit-cards {
 //       grid-template-columns: 1fr 1fr 1fr;
 //     }
 //   }
-  
+
 //   // Extra large devices (large desktops, 1200px and up)
 //   @media (min-width: 1200px) {
 //     .spirit-cards {
