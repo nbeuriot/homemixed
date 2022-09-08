@@ -10,8 +10,8 @@ class IngredientsController < ApplicationController
         # PG search by name and spirits
         if params[:query]
           @ingredients = Ingredient.where(spirit: true).search_by_name_and_spirit(params[:query])
-        else
-          @ingredients = Ingredient.all
+        # else
+        #   @ingredients = Ingredient.all
         end
       end
     end
