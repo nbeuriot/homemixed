@@ -6,7 +6,7 @@ class IngredientsController < ApplicationController
     ingredient_objects = Ingredient.where(spirit: true)
     ingredient_objects.each do |object|
       if most_popular.include?(object.name)
-        @spirits << object.name
+        @spirits << object
       end
     end
   end

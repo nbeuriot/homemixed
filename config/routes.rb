@@ -11,9 +11,10 @@ Rails.application.routes.draw do
   resources :ingredients, only: [:index]
 
   resources :cocktails, only: [:index, :show]
-  resources :user_ingredients, only: [:index] do
-    resources :ingredients, only: [:create, :new, :destroy]
+  resources :user_ingredients, only: [:index, :destroy] do
+    resources :ingredients, only: [:create, :new,]
   end
   # custom routes
+  get "/add_ingredient/:id", to: "user_ingredients#create"
   get "/non_spirits", to: "ingredients#non_spirits", as: :non_spirits
 end
