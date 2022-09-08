@@ -10,17 +10,45 @@
   </div>
 
   <!-- search bar will go here -->
-  <div>
-    <p>SEARCH BAR</p>
+ <div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-8">
+
+          <%= form_with url: non_spirits_path, method: :get, class: "d-flex my-3" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "search for ingredients"
+            %>
+            <%= submit_tag "find", class: "btn btn-primary" %>
+          <% end %>
+        <div class="spirit-grid">
+          <% if !@ingredients.nil? %>
+            <% @ingredients.each do |ingredient| %>
+              <div class="spirit-cards">
+                <h4><%= ingredient.name %></h4>
+              </div>
+            <% end %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <p class="home-page-h2">Ingredients</p>
-  <!-- Our flex container to hold our cards side by side -->
-  <div class="center-grid">
+
+<p class="home-page-h2">Ingredients</p>
+  <div class="spirit-grid">
     <!-- Our spirits cards that will be displayed in a grid -->
-    <%@ingredients.each do |ingredient| %>
+    <%@non_spirits.each do |spirit| %>
       <!-- these cards will have the background image we chose with the text centered -->
-      <div class="ingredient_card"><%= ingredient %></div>
+
+      <div data-controller="add-to-bar" data-action="click->add-to-bar#create" data-add-to-bar-id-value="<%= spirit.id %>" class="spirit-cards">
+        <div class="spirit-cards" style="background-image: url('<%= cl_image_path(spirit.photo.key) %>');">
+          <%= spirit.name %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
