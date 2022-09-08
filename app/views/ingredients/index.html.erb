@@ -24,11 +24,13 @@
             <%= submit_tag "find", class: "btn btn-primary" %>
           <% end %>
         <div class="spirit-grid">
+          <% if !@ingredients.nil? %>
             <% @ingredients.each do |ingredient| %>
-                <div class="spirit-cards">
-                  <h4><%= ingredient.name %></h4>
-                </div>
-              <% end %>
+              <div class="spirit-cards">
+                <h4><%= ingredient.name %></h4>
+              </div>
+            <% end %>
+          <% end %>
           </div>
         </div>
       </div>
