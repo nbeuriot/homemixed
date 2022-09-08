@@ -15,12 +15,13 @@
   </div>
 
   <p>Base Spirits</p>
-  <!-- Our flex container to hold our cards side by side -->
-  <div class="card-container">
+  <div class="spirit-grid">
     <!-- Our spirits cards that will be displayed in a grid -->
     <%@spirits.each do |spirit| %>
       <!-- these cards will have the background image we chose with the text centered -->
-      <div><%= spirit %></div>
+      <div class="spirit-cards">
+        <div><%= spirit %></div>
+      </div>
     <% end %>
   </div>
 </div>
