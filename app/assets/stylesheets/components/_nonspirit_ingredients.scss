@@ -1,5 +1,6 @@
-.assistant-cards {
-    height: 110px !important;
+
+.ingredient_card {
+    height: 90px !important;
     width: 350px !important;
     border-radius: 20px;
     display: flex;
@@ -10,12 +11,6 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-style: solid;
     border-width: thin;
-    margin-top: 35px;
-    margin-bottom: 18px;
-  }
-
-  .assistant-cards:hover
-  {
-    color: #ffffff;
-    background-color: $royal-purple;
-  }
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
