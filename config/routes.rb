@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :ingredients, only: [:create, :new,]
   end
   # custom routes
+  get "/ready_to_make", to: "cocktails#ready_to_make", as: :ready_to_make
   get "/add_ingredient/:id", to: "user_ingredients#create"
   get "/non_spirits", to: "ingredients#non_spirits", as: :non_spirits
 end
