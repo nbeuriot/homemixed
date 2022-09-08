@@ -1,0 +1,21 @@
+.assistant-cards {
+    height: 55px !important;
+    width: 350px !important;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px !important;
+    color: #000000;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-style: solid;
+    border-width: thin;
+    margin-top: 35px;
+    margin-bottom: 18px;
+  }
+
+  .assistant-cards:hover
+  {
+    color: #ffffff;
+    background-color: $royal-purple;
+  }

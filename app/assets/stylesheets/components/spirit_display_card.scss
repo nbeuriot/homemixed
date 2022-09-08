@@ -1,3 +1,4 @@
+// the grid for displaying spirits or similar cards
 .spirit-grid {
     display: grid;
     grid-template-columns: 155px 155px;
@@ -7,7 +8,7 @@
     padding-top: 15px;
 }
 
-
+// the card for spirits
 .spirit-cards {
     height: 117px !important;
     width: 150px !important;
@@ -21,6 +22,7 @@
     background-color: black;
   }
 
+  // this will give our apirit image the look of a dark overlay
   .spirit-image
   {
     opacity: .6;
