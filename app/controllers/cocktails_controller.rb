@@ -7,6 +7,10 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def ready_to_make
+    @cocktails = Cocktail.first(5)
+  end
+
   def show
   end
 end

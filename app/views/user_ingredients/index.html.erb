@@ -1,0 +1,8 @@
+<div class="container">
+ <h1>My Bar</h1>
+  <ul>
+    <% @user_ingredients.each do |ingredient| %>
+        <li><%= ingredient.ingredient.name %></li>
+    <% end %>
+  </ul>
+</div>
