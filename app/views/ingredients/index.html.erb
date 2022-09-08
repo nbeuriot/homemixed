@@ -26,7 +26,7 @@
         <div class="spirit-grid">
           <% if !@ingredients.nil? %>
             <% @ingredients.each do |ingredient| %>
-              <div class="spirit-cards">
+              <div class="spirit-cards" style="background-image: url('<%= cl_image_path(ingredient.photo.key) %>');">
                 <h4><%= ingredient.name %></h4>
               </div>
             <% end %>
