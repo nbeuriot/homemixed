@@ -10,8 +10,11 @@ class UserIngredientsController < ApplicationController
 
     respond_to do |format|
       if @user_ingredient.save
-        format.json # Follow the classic Rails flow and look for a create.json view
+        format.turbo_stream
+        format.html { redirect_back fallback_location: ingredients_path, notice: "Successfully added ingredient to list" }
+        format.json # Follow the classic Rails flow and look for a create.json view,
       else
+        format.html { redirect_back fallback_location: ingredients_path, alert: "Something went wrong" }
         format.json # Follow the classic Rails flow and look for a create.json view
       end
     end

@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   end
   # custom routes
   get "/ready_to_make", to: "cocktails#ready_to_make", as: :ready_to_make
-  get "/add_ingredient/:id", to: "user_ingredients#create"
+  post "/add_ingredient/:id", to: "user_ingredients#create", as: :add_ingredients
   get "/non_spirits", to: "ingredients#non_spirits", as: :non_spirits
 end
