@@ -8,7 +8,7 @@ class CocktailsController < ApplicationController
   end
 
   def ready_to_make
-    @cocktails = Cocktail.first(5)
+    @cocktails = Cocktail.first(4)
   end
 
   def show
