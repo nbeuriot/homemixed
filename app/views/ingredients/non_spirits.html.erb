@@ -2,10 +2,10 @@
   <!-- Our top buttons to filter spirits or ingredients -->
   <div class="index-grid">
     <div>
-      <h1 class="boxword">spirits</h1>
+      <h1 class="boxword-clear">spirits</h1>
     </div>
     <div>
-      <h1 class="boxword-clear">ingredients</h1>
+      <h1 class="boxword">ingredients</h1>
     </div>
   </div>
 
@@ -37,18 +37,29 @@
     </div>
   </div>
 
-
-<p class="home-page-h2">Ingredients</p>
-  <div class="spirit-grid">
     <!-- Our spirits cards that will be displayed in a grid -->
     <%@non_spirits.each do |spirit| %>
       <!-- these cards will have the background image we chose with the text centered -->
-
-      <div data-controller="add-to-bar" data-action="click->add-to-bar#create" data-add-to-bar-id-value="<%= spirit.id %>" class="spirit-cards">
-        <div class="spirit-cards" style="background-image: url('<%= cl_image_path(spirit.photo.key) %>');">
-          <%= spirit.name %>
+      <div data-controller="add-to-bar" data-action="click->add-to-bar#create add-to-bar#slide" data-add-to-bar-id-value="<%= spirit.id %>" class="ingredient_card fade-in">
+        <div>
+          <%= cl_image_tag spirit.photo.key, height: 60, width: 60, crop: :fill %>
+        </div>
+        <div class="desc-container">
+          <div class="spirit-name">
+            <%= spirit.name %>
+          </div>
+          <div class="description">
+            <%= spirit.description.truncate(35) %>
+          </div>
         </div>
       </div>
     <% end %>
-  </div>
 </div>
+
+<!-- this is for trying to animate ingredient selections
+<script>
+    $('.slide').on('click', function(){
+      $('#fade-in').toggleClass('show');
+  });
+</script>
+-->
