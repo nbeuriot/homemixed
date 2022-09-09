@@ -1,0 +1,25 @@
+<div class="container">
+  <!-- div to contain entire card -->
+  <div class="cocktail-show-card">
+
+    <div class="cocktail-image">
+      <%= cl_image_tag @cocktail.photo.key, height: 250, width: 365, crop: :fill, radius: 60  %>
+    </div>
+
+    <div class="cocktail-desc">
+      <h1><%= @cocktail.name %></h1>
+      <hr class="line">
+      <div class="category-container">
+        <p class="cocktail-category"><%= @cocktail.category %></p>
+      </div>
+    </div>
+
+    <div class="cocktail-instructions">
+        <p>Fizzy mint lime drink that's a bit sweet.<br>
+          Incredibly refreshing and extremely easy to drink!</p>
+          <h2>How to make</h2>
+        <p><%= @cocktail.recipe %></p>
+    </div>
+
+  </div>
+</div>

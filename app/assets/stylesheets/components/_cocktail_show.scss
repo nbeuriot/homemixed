@@ -1,0 +1,43 @@
+.cocktail-image {
+  margin-top: 20px;
+  z-index: -1;
+}
+
+.cocktail-desc {
+  text-align: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 3px 10px gray;
+  border-radius: 20px;
+  position: relative;
+  left: 30px;
+  top: -46px;
+  width: 315px;
+}
+
+h1 {
+  padding-top: 10px;
+}
+
+.cocktail-instructions {
+  padding: 0 0 10px 10px;
+}
+
+.line {
+  margin: 0 10% 3% 10%;
+  color: black;
+}
+
+.cocktail-category {
+  text-align: right;
+  margin-right: 4%;
+}
+
+.category-container {
+  max-width: 40px;
+  margin-left: 62%;
+}
+
+p {
+  margin-top: 10px;
+}
