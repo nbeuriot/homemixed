@@ -1,21 +1,48 @@
 .assistant-cards {
     height: 110px !important;
-    width: 350px !important;
-    border-radius: 20px;
+    width: 375px !important;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 35px !important;
+    font-size: 18px !important;
     color: #000000;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-style: solid;
-    border-width: thin;
-    margin-top: 35px;
-    margin-bottom: 18px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    background-image: linear-gradient(to right, #A0BEF8 , #B5F0F0);
   }
 
   .assistant-cards:hover
   {
-    color: #ffffff;
-    background-color: $royal-purple;
+    background-image: linear-gradient(to right, #7695d4 , #80caca);
+  }
+
+  .page-name {
+    margin-top: 30px;
+    font-weight: bold;
+  }
+
+  .desc-container {
+    flex-direction: column;
+    margin-left: 30px;
+  }
+
+  .description p {
+    font-size: 12px;
+    font-weight: lighter;
+    color: rgb(131, 131, 131);
+  }
+
+  .name {
+    text-decoration: none;
+    color: black;
+  }
+
+  .div-link {
+    text-decoration: none;
+  }
+
+  .fix-margin {
+    margin-bottom: 0;
   }

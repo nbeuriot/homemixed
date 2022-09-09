@@ -1,7 +1,8 @@
 nav {
   height: 65px;
   overflow: scroll;
-  background: #ececec;
+  background: #eaeaeabf;
+  backdrop-filter: blur(10px);
   position: fixed; /* Set the navbar to fixed position */
   bottom: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
