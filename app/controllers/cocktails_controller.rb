@@ -9,7 +9,7 @@ class CocktailsController < ApplicationController
 
   def ready_to_make
     # @cocktails = Cocktail.first(5)
-    @cocktails = Cocktail.where(name: "Mojito")[0]
+    @cocktails = Cocktail.where(name: "Mojito")
   end
 
   def show
