@@ -1,11 +1,74 @@
-<h1 class="main-header">Assistant Page</h1>
-  <div class="center-grid">
-    <%= link_to "My Bar", "user_ingredients", class: "assistant-cards" %>
-    <p class="assistant-cards">Favourite Cocktails</p >
-    <p class="assistant-cards">My Notes</p>
-    <p class="assistant-cards">Tips</p>
-  </div>
+<div class="container">
+  <h1 class="page-name">Assistant</h1>
 
-<div>
-  <%= render partial: "shared/long_card"%>
+  <div class="center-grid">
+
+    <!-- my bar link html -->
+    <a href="/user_ingredients" class="div-link">
+      <div class="assistant-cards">
+        <div>
+          <i class="fa-solid fa-champagne-glasses fa-2xl"></i>
+        </div>
+        <div class="desc-container">
+          <div>
+            <p class="fix-margin">My Bar</p>
+          </div>
+          <div class="description">
+            <p>See all the ingredients you have saved</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- favorites link html -->
+    <a href="#" class="div-link">
+      <div class="assistant-cards">
+        <div>
+          <i class="fa-solid fa-star fa-2xl"></i>
+        </div>
+        <div class="desc-container">
+          <div>
+            <p class="fix-margin">Favorite Cocktails</p>
+          </div>
+          <div class="description">
+            <p>Easy access to all of your favorite cocktails</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- my notes link html -->
+    <a href="#" class="div-link">
+      <div class="assistant-cards">
+        <div>
+          <i class="fa-solid fa-clipboard fa-2xl"></i>
+        </div>
+        <div class="desc-container">
+          <div>
+            <p class="fix-margin">My Notes</p>
+          </div>
+          <div class="description">
+            <p>Add custom recipe tweaks to your cocktails</p>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- tips link html-->
+    <a href="#" class="div-link">
+      <div class="assistant-cards">
+        <div>
+          <i class="fa-solid fa-glasses fa-2xl"></i>
+        </div>
+        <div class="desc-container">
+          <div>
+            <p class="fix-margin">Tips</p>
+          </div>
+          <div class="description">
+            <p>Tips on some advanced mixology topics</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
 </div>
