@@ -1,0 +1,12 @@
+<p class="home-page-h2">You can make</p>
+
+<%# each cocktail display a card to click on %>
+<div class="ready-grid">
+  <% @cocktails.each do |cocktail| %>
+    <%= link_to cocktail_path(cocktail) do %>
+      <div class="ready-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path(cocktail.photo.key) %>');">
+        <%= cocktail.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
