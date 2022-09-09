@@ -1,3 +1,4 @@
+<!--  search bar start -->
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sm-8">
@@ -6,18 +7,38 @@
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Find a cocktail"
+          placeholder: "find a cocktail"
         %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <%= submit_tag "find", class: "btn btn-primary" %>
       <% end %>
     <div>
-      <div id="cocktails">
+     <!-- Pervious search for cocktail list
+     <div id="cocktails">
         <% @cocktails.each do |cocktail| %>
           <h4><%= cocktail.name %></h4>
           <p><%= cocktail.recipe %></p>
         <% end %>
       </div>
     </div>
-  </div>
-</div>
+  </div> -->
+      <!--  search bar end -->
 
+  <!-- Our  cards that will be displayed in a grid -->
+  <!-- link to css app/assets/stylesheets/_long_card_cocktails.scss -->
+    <%@cocktails.each do |cocktail| %>
+      <!-- these cards will have the background image we chose with the text centered -->
+      <div data-controller="add-to-favourite" data-action="click->add-to-favourite#create add-to-favourite#slide" data-add-to-bar-id-value="<%= cocktail.id %>" class="cocktail_card">
+        <div class="img-thumbnail" class="rounded">
+          <%= cl_image_tag cocktail.photo.key, height: 60, width: 60, crop: :fill %>
+        </div>
+          <div class="cocktail-description">
+            <div class="cocktail-name">
+                <%= cocktail.name %>
+            </div>
+            <div class="recipe">
+                <%= cocktail.recipe.truncate(60) %>
+            </div>
+        </div>
+      </div>
+  <% end %>
+</div>

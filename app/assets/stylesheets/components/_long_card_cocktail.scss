@@ -1,0 +1,25 @@
+.cocktail_card {
+  height: 67px !important;
+  width: 375px !important;
+  display: flex;
+  align-items: center;
+  font-size: 16px !important;
+  color: black;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-image: linear-gradient(to right,  #9EF9D8,#CAF6BF);
+}
+
+.cocktail-description {
+flex-direction: column;
+margin-left: 30px;
+}
+
+.recipe {
+font-size: 12px;
+font-weight: lighter;
+color: gray;
+}
