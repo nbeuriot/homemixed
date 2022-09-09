@@ -21,7 +21,9 @@
               class: "form-control",
               placeholder: "search for spirit"
             %>
+
             <%= submit_tag "find", class: "btn btn-primary" %>
+
           <% end %>
         <div class="spirit-grid">
           <% if !@ingredients.nil? %>
@@ -50,4 +52,10 @@
       </div>
     <% end %>
   </div>
+  <div class="next-grid">
+    <p class="next-button-invisible"> previous </p>
+    <a href="/non_spirits" class="next-button"> next </a>
+  </div>
 </div>
+
+<%# /non_spirits %>
