@@ -1,0 +1,48 @@
+.next-grid {
+    display: grid;
+    grid-template-columns: 155px 155px;
+    grid-gap: 16px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.next-grid-ingredients {
+    display: grid;
+    grid-template-columns: 155px 155px;
+    grid-gap: 35px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+// the button for nexting
+.next-button {
+    height: 60px !important;
+    width: 150px !important;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px !important;
+    color: #000000;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-image: linear-gradient(to right, #A0BEF8 , #B5F0F0);
+    background-size: cover;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .next-button-invisible {
+    height: 60px !important;
+    width: 150px !important;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px !important;
+    color: #ffffff;
+    background-color: transparent;
+    background-size: cover;
+    text-align: center;
+  }
