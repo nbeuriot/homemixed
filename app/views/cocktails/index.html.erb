@@ -10,7 +10,7 @@
         %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
-
+    <div>
       <div id="cocktails">
         <% @cocktails.each do |cocktail| %>
           <h4><%= cocktail.name %></h4>
@@ -20,3 +20,4 @@
     </div>
   </div>
 </div>
+
