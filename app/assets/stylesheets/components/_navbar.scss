@@ -27,8 +27,12 @@ nav a {
   transition: 0.3s;
 }
 
+nav a:active {
+  color: linear-gradient(to right, rgba(160, 190, 248, .6) , rgba(181, 240, 240, .6));
+}
+
 nav a:hover {
-  color: $royal-purple;
+  color: linear-gradient(to right, rgba(160, 190, 248, .6) , rgba(181, 240, 240, .6));
 }
 
 .wrapper {
