@@ -33,7 +33,7 @@
         </div>
           <div class="cocktail-description">
             <div class="cocktail-name">
-                <%= cocktail.name %>
+                <%= cocktail.name.downcase %>
             </div>
             <div class="recipe">
                 <%= cocktail.recipe.truncate(60) %>
