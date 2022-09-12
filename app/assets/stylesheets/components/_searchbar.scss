@@ -1,1 +1,17 @@
 
+
+.form-control {
+  border-radius: 10px 0 0 10px;
+  border-right: 0;
+
+}
+
+.search-button {
+  border-radius: 10px 10px 10px 10px;
+  background-image: linear-gradient(to right, rgba(160, 190, 248, 0.6), rgba(181, 240, 240, 0.6));
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 0;
+  width: 110px;
+  position: relative;
+  left: -10px;
+}
