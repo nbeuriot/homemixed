@@ -21,8 +21,10 @@
               class: "form-control",
               placeholder: "search for spirit"
             %>
-
-            <%= submit_tag "find", class: "btn btn-primary" %>
+            <%= button_tag type: 'submit', class: "btn search-button" do %>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            <% end %>
+            
 
           <% end %>
         <div class="spirit-grid">
