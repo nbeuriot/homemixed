@@ -8,14 +8,10 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @favorite = Favorite.new(params[:id])
+    @favorite = Favorite.new
     @favorite.user = current_user
     @cocktail = Cocktail.find(params[:id])
     @favorite.cocktail = @cocktail
-    if @favorite.save
-      redirect_to favorites_path, notice: "Cocktial saved to favorites"
-    else
-      redirect_to cocktail_path(@cocktail)
-    end
+    @favorite.save
   end
 end
