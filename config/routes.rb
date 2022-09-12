@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/home', to: 'pages#home'
   resources :pages, only: [:index, :home]
   resources :ingredients, only: [:index]
+  resources :favorites, only: [:index, :create, :new, :destroy]
 
   resources :cocktails, only: [:index, :show]
   resources :user_ingredients, only: [:index, :destroy] do
