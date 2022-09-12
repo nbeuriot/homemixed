@@ -38,30 +38,29 @@
       </div>
     </div>
   </div>
-
-  <p class="home-page-h2">base spirits</p>
   <div class="spirit-grid">
     <!-- Our spirits cards that will be displayed in a grid -->
     <%@spirits.each do |spirit| %>
       <!-- these cards will have the background image we chose with the text centered -->
 
       <% if false %>
-        <div data-controller="add-to-bar" data-action="click->add-to-bar#create" data-add-to-bar-id-value="<%= spirit.id %>" class="spirit-cards">
+        <div data-controller="add-to-bar" data-action="click->add-to-bar#create" data-add-to-bar-id-value="<%= spirit.id %>">
           <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path(spirit.photo.key) %>');">
             <%= spirit.name %>
           </div>
         </div>
       <% end %>
 
-      <%= button_to add_ingredients_path(spirit), method: :post, class: "spirit-cards" do %>
+      <%= button_to add_ingredients_path(spirit), method: :post, class: "remove-border" do %>
         <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path(spirit.photo.key) %>');">
           <%= spirit.name.downcase %>
         </div>
       <% end %>
     <% end %>
   </div>
+
   <div class="next-grid">
-    <p class="next-button-invisible"> previous </p>
+    <a class="next-button-invisible"> previous </a>
     <a href="/non_spirits" class="next-button"> next </a>
   </div>
 </div>

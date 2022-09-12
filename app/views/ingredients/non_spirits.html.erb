@@ -22,6 +22,7 @@
               placeholder: "search for ingredients"
             %>
             <%= submit_tag "find", class: "btn btn-primary" %>
+
           <% end %>
         <div class="spirit-grid">
           <% if !@ingredients.nil? %>
@@ -36,26 +37,20 @@
       </div>
     </div>
   </div>
-
     <!-- Our spirits cards that will be displayed in a grid -->
-    <%@non_spirits.each do |spirit| %>
-      <!-- these cards will have the background image we chose with the text centered -->
-      <div data-controller="add-to-bar" data-action="click->add-to-bar#create add-to-bar#slide" data-add-to-bar-id-value="<%= spirit.id %>" class="ingredient_card fade-in">
-        <div>
-          <%= cl_image_tag spirit.photo.key, height: 60, width: 60, crop: :fill %>
-        </div>
-        <div class="desc-container">
-          <div class="spirit-name">
-            <%= spirit.name.downcase %>
-          </div>
-          <div class="description">
-            <%= spirit.description.truncate(35) %>
+    <div class="spirit-grid">
+      <%@non_spirits.each do |spirit| %>
+        <!-- these cards will have the background image we chose with the text centered -->
+        <div data-controller="add-to-bar" data-action="click->add-to-bar#create add-to-bar#slide" data-add-to-bar-id-value="<%= spirit.id %>" class="spirit-cards">
+          <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path(spirit.photo.key) %>');">
+            <%# <%= cl_image_tag spirit.photo.key, height: 60, width: 60, crop: :fill %>
+              <%= spirit.name.downcase %>
           </div>
         </div>
-      </div>
-    <% end %>
-
-    <div class="next-grid-ingredients">
+      <% end %>
+    
+    </div>
+    <div class="next-grid">
     <a href="/ingredients" class="next-button"> previous </a>
     <a href="/ready_to_make" class="next-button"> next </a>
   </div>
