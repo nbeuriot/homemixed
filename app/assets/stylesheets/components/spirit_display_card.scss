@@ -24,6 +24,14 @@
     text-align: center;
   }
 
+  .remove-border {
+    border: transparent !important;
+    height: 117px !important;
+    width: 150px !important;
+    padding: 0 !important;
+    border-radius: 20px;
+  }
+
   // this will give our apirit image the look of a dark overlay
   .spirit-cards background-image {
     opacity: .6;
