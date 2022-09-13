@@ -12,35 +12,201 @@
         <%= button_tag type: 'submit', class: "btn search-button" do %>
           <i class="fa-solid fa-magnifying-glass"></i>
         <% end %>
-      <% end %>
-    <div>
-     <!-- Pervious search for cocktail list
-     <div id="cocktails">
-        <% @cocktails.each do |cocktail| %>
-          <h4><%= cocktail.name %></h4>
-          <p><%= cocktail.recipe %></p>
-        <% end %>
-      </div>
-    </div>
-  </div> -->
-      <!--  search bar end -->
 
-  <!-- Our  cards that will be displayed in a grid -->
-  <!-- link to css app/assets/stylesheets/_long_card_cocktails.scss -->
-    <%@cocktails.each do |cocktail| %>
-      <!-- these cards will have the background image we chose with the text centered -->
+      <% end %>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#cocktail-search" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#cocktail-search" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+
+<% if false %>
+  <section aria-label="Newest Photos" class="container">
+    <h3>classic cocktails</h3>
+      <div class="carousel" data-carousel>
+        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+        <ul data-slides>
+          <%mojito = @cocktails.find_by(name: "Mojito")  %>
+          <% if mojito.present? %>
+            <li class="slide" data-active>
+              <%= image_tag "Mojito.png" %>
+              <h5>mojito</h5>
+              <p>One theory is that an associate of English pirate Sir Francis Drake invented the mojito in Havana, following an unsuccessful invasion in the 1500s. As the story goes, his crew were suffering from scurvy and dysentery, two illnesses for which the local indigenous people were known to have medicine</p>
+            </li>
+          <% end %>
+
+          <%espresso_martini = @cocktails.find_by(name: "Espresso Martini")  %>
+          <% if espresso_martini.present? %>
+            <li class="slide">
+              <%= image_tag "EspressoMartini.png" %>
+              <h5>espresso martini</h5>
+              <p>The espresso martini is a cocktail name familiar to all but the most inexperienced of drinkers, but it wasn't always known as such. Invented by Dick Bradsell back in 1983 during his tenure at the Soho Brasserie, it was originally christened the “Vodka Espresso”.</p>
+            </li>
+            <% end %>
+
+            <li class="slide">
+              <%= image_tag "French75.png" %>
+              <h5>french 75</h5>
+              <p>The drink dates to World War I, and an early form was created in 1915 at the New York Bar in Paris—later Harry's New York Bar—by barman Harry MacElhone. The combination was said to have such a kick that it felt like being shelled with the powerful French 75mm field gun.</p>
+            </li>
+
+            <li class="slide">
+              <%= image_tag "Aperol Spritz.png" %>
+              <h5>aperol spritz</h5>
+            <p>Often described as an Italian sunset in a glass, the Aperol Spritz originated in the city of Padua and has become one of the most famous cocktails from Italy. The Aperol liqueur became a beloved apéritif in Padua and out of its rising popularity the Aperol Spritz was born during the chic 1950s in Northern Italy.</p>
+            </li>
+
+            <li class="slide">
+              <%= image_tag "Bloodymary.png" %>
+              <h5>bloody mary</h5>
+            <p>The creation of the Bloody Mary is often credited to Fernand Petiot in the 1920s while a young bartender at Harry's New York Bar in Paris. However, it appears he simply spiced up an existing and well-established combo of vodka and tomato juice while working at the St. Regis Hotel, New York City during the 1940s.</p>
+            </li>
+
+            <li class="slide">
+              <%= image_tag "Brandon and Will's Coke Float.png" %>
+              <h5>brandon and will's coke float</h5>
+            <p>Categorized under Soft Drink. This Brandon and Will’s Coke Float cocktail recipe consists of 3 ingredients. A combination of Vanilla ice-cream, Coca-Cola and Bourbon for your enjoyment.</p>
+            </li>
+
+            <li class="slide">
+              <%= image_tag "Caipirinha.png" %>
+              <h5>Caipirinha</h5>
+            <p>Thought to have originated in Paratay – São Paulo – Brazil it is no longer simply Brazils national drink but has now become a great classic cocktail around the world. Some believe that it was initially prepared as a medicine to ease the effects of the Spanish Flu towards the end of World War I.</p>
+            </li>
+
+              <li class="slide">
+              <%= image_tag "cosmopolitan.png" %>
+              <h5>cosmopolitan</h5>
+            <p>Neal Murray. Bartender Neal Murray says he created the cosmopolitan in 1975 at the Cork & Cleaver steak house in Minneapolis. According to Murray, he added a splash of cranberry juice to a Kamikaze and the first taster declared, "How cosmopolitan." This event supposedly led to the naming of the new beverage.</p>
+            </li>
+
+              <li class="slide">
+              <%= image_tag "Irish Coffee.png" %>
+              <h5>irish coffee</h5>
+            <p>Irish Coffee was created in the winter of 1943 by Joe Sheridan, chef at Foynes Port near Limerick, Ireland. Foynes had become one of the biggest civilian airports in Europe during World War ll and then an airbase for transatlantic flights that often carried political or Hollywood figures. The airbase was usually just a stop over for longer flights to refuel and often due to weather passengers would need to stay for the night and new restaurant was created to cater to these dignified passengers. </p>
+            </li>
+
+              <li class="slide">
+              <%= image_tag "Mai Tai.png" %>
+              <h5>mai tai</h5>
+            <p>The Mai Tai /ˈmaɪ ˈtaɪ/ is a cocktail made of rum, Curaçao liqueur, orgeat syrup, and lime juice. It is one of the characteristic cocktails in tiki culture. Victor J. Bergeron claimed to have invented the Mai Tai in 1944 at his restaurant, Trader Vic's, in Oakland, California, US. Trader Vic's forerunner, Donn Beach, claimed to have instead first created it in 1933, although a longtime colleague said that Beach was actually just alleging that the Mai Tai was based on his Q.B. Cooler cocktail. </p>
+            </li>
+
+            <li class="slide">
+              <%= image_tag "Manhattan.png" %>
+              <h5>manhattan</h5>
+            <p>Most likely an ode to the Scottish outlaw and folk hero, the Rob Roy Manhattan was created in 1894 by a bartender at the Waldorf Astoria located in Manhattan, New York City. The main defining ingredient of this drink is scotch whiskey - which is used instead of the traditional rye or bourbon whiskey.</p>
+            </li>
+
+            <li class="slide">
+              <%= image_tag "margarita.png" %>
+              <h5>margarita</h5>
+            <p>Francisco “Pancho” Morales invented the Margarita on July 4, 1942, at a bar in Juárez, Mexico, named Tommy's Place. A female customer requested a Magnolia – brandy, Cointreau, and an egg yolk, topped with Champagne. Morales only remembered the Cointreau from the recipe, so he improvised</p>
+            </li>
+
+            <li class="slide">
+              <%= image_tag "oldfashion.png" %>
+              <h5>old fashion</h5>
+            <p>The first whiskey old fashioned recipe was printed in 1895 in Modern American Drinks by George Kappeler. His recipe instructs the reader to dissolve a lump of sugar in water, add two dashes of bitters, a piece of ice, lemon-peel and one jigger whiskey.</p>
+            </li>
+
+            <li class="slide">
+              <%= image_tag "Paloma.png" %>
+              <h5>paloma</h5>
+            <p>Some believe that it is named after La Paloma (“The Dove”), the popular folk song composed in the early 1860s. Diffords guide states it was created by the legendary Don Javier Delgado Corona, owner and bartender of La Capilla, in Tequila, Mexico.</p>
+            </li>
+
+            <li class="slide">
+              <%= image_tag "Pina Colada.png" %>
+              <h5>pina colada</h5>
+            <p>The piña colada hails from San Juan, Puerto Rico where it was created by bartender Ramón “Monchito” Marrero at the Caribe Hilton in 1954. He mixed up a fruity blend of rum, coconut cream and pineapple juice and boom. Everyone's favorite summer treat was created.</p>
+            </li>
+
+            <li class="slide">
+              <%= image_tag "Rum and Coke.png" %>
+              <h5>rum and coke</h5>
+            <p>Its origin is associated with the heavy U.S. presence in Cuba following the Spanish–American War of 1898; the drink's traditional name, "Cuba libre" (Free Cuba), was the slogan of the Cuban independence movement. The Cuba libre is sometimes said to have been created during the Spanish–American War.</p>
+            </li>
+
+            <li class="slide">
+              <%= image_tag "Sangria.png" %>
+              <h5>sangria</h5>
+            <p>Dating back to 200 B.C., the Romans enjoyed drinking red wines from Spain. They began naming the wines and wine-based punches sangria, but it wasn't quite what it was today. More than a century later, sangria would become a popular drink in Europe, specifically when made with French Bordeaux as the boozy base.</p>
+            </li>
+
+            <li class="slide">
+              <%= image_tag "Screwdriver.png" %>
+              <h5>screw driver</h5>
+            <p>The drink originated during World War II, when Americans in China and Turkey mixed neutral spirits with orange juice. The origin of the name "screwdriver" is less clear, but the name appeared in Ankara, Turkey, in 1943 and 1944 and later in Istanbul.</p>
+            </li>
+
+            <li class="slide">
+              <%= image_tag "Tequila Sunrise.png" %>
+              <h5>tequila Sunrise</h5>
+            <p>The drink is served unmixed in a tall glass. The modern drink originates from Sausalito, California, in the early 1970s after an earlier iteration created in the 1930s in Phoenix, Arizona. The cocktail is named for its appearance when served—with gradations of color resembling a sunrise.</p>
+            </li>
+
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+  const slideButtons = document.querySelectorAll("[data-carousel-button]")
+
+  slideButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const offset = button.dataset.carouselButton === "next" ? 1 : -1
+      const slides = button
+        .closest("[data-carousel]")
+        .querySelector("[data-slides]")
+
+      const activeSlide = slides.querySelector("[data-active]")
+      let newIndex = [...slides.children].indexOf(activeSlide) + offset
+      if (newIndex < 0) newIndex = slides.children.length - 1
+      if (newIndex >= slides.children.length) newIndex = 0
+
+      slides.children[newIndex].dataset.active = true
+      delete activeSlide.dataset.active
+    })
+  })
+  </script>
+<% end %>
+
+<!-- Our  cards that will be displayed in a grid -->
+  <!-- link to css app/assets/stylesheets/_long_card_cocktails.scss
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+     <%@cocktails.each do |cocktail| %>
+       these cards will have the background image we chose with the text centered
       <div data-controller="add-to-favourite" data-action="click->add-to-favourite#create add-to-favourite#slide" data-add-to-bar-id-value="<%= cocktail.id %>" class="cocktail_card">
         <div class="img-thumbnail" class="rounded">
           <%= cl_image_tag cocktail.photo.key, height: 60, width: 60, crop: :fill %>
-        </div>
-          <div class="cocktail-description">
+        <div class="cocktail-description">
             <div class="cocktail-name">
                 <%= cocktail.name.downcase %>
             </div>
             <div class="recipe">
                 <%= cocktail.recipe.truncate(60) %>
+            <% end %>
             </div>
         </div>
       </div>
-  <% end %>
+    </div>
+  </div>
 </div>
+-->

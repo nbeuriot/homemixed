@@ -1,25 +1,120 @@
-.cocktail_card {
-  height: 67px !important;
-  width: 375px !important;
-  display: flex;
-  align-items: center;
-  font-size: 16px !important;
-  color: black;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-image: linear-gradient(to right,  #9EF9D8,#CAF6BF);
+// // .cocktail_card {
+// //   height: 67px !important;
+// //   width: 375px !important;
+// //   display: flex;
+// //   align-items: center;
+// //   font-size: 16px !important;
+// //   color: black;
+// //   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+// //   margin-left: auto;
+// //   margin-right: auto;
+// //   margin-top: 10px;
+// //   margin-bottom: 10px;
+// //   background-image: linear-gradient(to right,  #9EF9D8,#CAF6BF);
+// // }
+
+// // .cocktail-description {
+// // flex-direction: column;
+// // margin-left: 30px;
+// // }
+
+// // .recipe {
+// // font-size: 12px;
+// // font-weight: lighter;
+// // color: gray;
+// // }
+
+// *, *::before, *::after {
+//   box-sizing: border-box;
+// }
+
+// // body {
+// //   margin: 0;
+// // }
+
+// .carousel {
+//   width: 100vw;
+//   height: 100vh;
+//   position: relative;
+// }
+
+// .carousel > ul {
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+// }
+
+// .slide {
+//   position: absolute;
+//   inset: 0;
+//   opacity: 0;
+//   transition: 100ms opacity ease-in-out;
+//   transition-delay: 0ms;
+// }
+
+// .cocktail-img {
+//   display: block;
+//   width: 100%;
+//   height: 60%;
+//   object-fit: cover;
+//   object-position: center;
+// }
+
+// .slide[data-active] {
+//   opacity: 1;
+//   z-index: 1;
+//   transition-delay: 0ms;
+// }
+
+// .carousel-button {
+//   position: absolute;
+//   z-index: 2;
+//   background: none;
+//   border: none;
+//   font-size: 4rem;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   color: rgba(255, 255, 255, .4);
+//   cursor: pointer;
+//   border-radius: .25rem;
+//   padding: 0 .5rem;
+//   background-color: rgba(0, 0, 0, .1);
+// }
+
+// .carousel-button:hover,
+// .carousel-button:focus {
+//   color: white;
+//   background-color: rgba(0, 0, 0, .2);
+// }
+
+// .carousel-button:focus {
+//   outline: 1px solid black;
+// }
+
+// .carousel-button.prev {
+//   left: 1rem;
+// }
+
+// .carousel-button.next {
+//   right: 1rem;
+// }
+
+.carousel-item {
+  height: 100vh;
+  // background: #777;
+  color: rgba($color: #000000, $alpha: 0.7);
+  position: relative;
+  width: 100vw;
+  background-size: cover ;
+  background-position: center;
 }
 
 .cocktail-description {
-flex-direction: column;
-margin-left: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 100px;
 }
 
-.recipe {
-font-size: 12px;
-font-weight: lighter;
-color: gray;
-}
+
