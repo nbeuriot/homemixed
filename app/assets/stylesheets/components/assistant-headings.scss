@@ -22,9 +22,10 @@
     background-color: rgb(255, 255, 255);
 }
 
-    .delete-btn {
-        top: -8px;
-        right: -63px;
-        position: relative;
-        color: rgba(160, 190, 248, .9);
+    .delete-this {
+      top: -11px;
+      right: -67px;
+      position: relative;
+      border-radius: 50%;
+      color:  rgb(219, 47, 47);
     }
