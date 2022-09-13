@@ -9,15 +9,20 @@ export default class extends Controller {
     console.log("favorite");
   }
 
-  favorite() {
+  createFavorite(event) {
     console.log("toggle");
     this.element.classList.remove("favorite");
     this.element.classList.add(this.favoritedClass);
+    event.preventDefault()
 
-    //fetch(this.likeableTarget, {
-    //  method: "POST",
-    //  headers: { "Accept": "application/json" },
-    //  body: JSON.stringify(this.likeableTarget)
-    //})
+    fetch(this.formTarget.action, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(this.formTarget)
+    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+      })
   }
 }

@@ -6,9 +6,6 @@
       <%= cl_image_tag @cocktail.photo.key, height: 250, width: 365, crop: :fill, radius: 60  %>
     </div>
 
-    <div class="favorite" data-controller="favorite" data-favorite-target="likeable" data-action="click->favorite#favorite" data-favorite-favorited-class="favorited">
-    </div>
-
     <div class="cocktail-desc">
       <h1><%= @cocktail.name.downcase %></h1>
       <hr class="line">
@@ -22,6 +19,19 @@
           Incredibly refreshing and extremely easy to drink!</p>
           <h2>how to make</h2>
         <p><%= @cocktail.recipe %></p>
+    </div>
+
+    <div class="favorite" data-favorite-favorited-class="favorited">
+
+      <%= simple_form_for([@favorite],
+        data: {
+          favorite_target: "likeable",
+          action: "submit->favorite#createFavorite"
+        }) do |f|
+      %>
+      <%= f.button :submit %>
+    <!-- [...] -->
+      <% end %>
     </div>
 
   </div>
