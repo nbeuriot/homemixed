@@ -42,5 +42,6 @@ class CocktailsController < ApplicationController
 
   def show
     @cocktail = Cocktail.find(params[:id])
+    @favorite = Favorite.new
   end
 end

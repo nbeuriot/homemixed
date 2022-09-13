@@ -1,10 +1,12 @@
+// changed the grid to fit our arrows better
 .next-grid {
     display: grid;
-    grid-template-columns: 155px 155px;
+    grid-template-columns: 213px 155px;
     grid-gap: 16px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding-top: 50px;
+    margin-left: 43px;
 }
 
 .next-grid-ingredients {
@@ -19,7 +21,7 @@
 // the button for nexting
 .next-button {
     height: 60px !important;
-    width: 150px !important;
+    width: 70px !important;
     border-radius: 20px;
     display: flex;
     align-items: center;
