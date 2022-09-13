@@ -6,7 +6,9 @@
       <% @user_ingredients.each do |ingredient| %>
         <!-- these cards will have the background image we chose with the text centered -->
           <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path(ingredient.ingredient.photo.key) %>');">
-          <p class="delete"> <i class="fa-sharp fa-solid fa-circle-xmark"></i> </p>
+            <div class="delete-btn">
+            <i class="fa-sharp fa-solid fa-circle-xmark fa-xl"></i>
+          </div>
             <%# <%= cl_image_tag spirit.photo.key, height: 60, width: 60, crop: :fill %>
               <%= ingredient.ingredient.name.downcase %>
           </div>
