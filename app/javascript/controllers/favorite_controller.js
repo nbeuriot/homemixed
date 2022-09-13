@@ -1,4 +1,4 @@
-import { Controller } from "@hotwired/stimulus"
+// import { Controller } from "@hotwired/stimulus"
 //import { ConcatenationScope } from "webpack";
 
 // Connects to data-controller="favorite"
