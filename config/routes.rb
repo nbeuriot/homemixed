@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get '/home', to: 'pages#home'
+  get "/cocktails/tips", to: "cocktails#tips"
   resources :pages, only: [:index, :home]
   resources :ingredients, only: [:index]
   resources :favorites, only: [:index, :create, :new, :destroy]
@@ -19,4 +20,5 @@ Rails.application.routes.draw do
   get "/ready_to_make", to: "cocktails#ready_to_make", as: :ready_to_make
   post "/add_ingredient/:id", to: "user_ingredients#create", as: :add_ingredients
   get "/non_spirits", to: "ingredients#non_spirits", as: :non_spirits
+
 end

@@ -1,0 +1,39 @@
+.tips-center {
+  width: 99%;
+  height: 780px;
+  display: grid;
+  place-items: center;
+  overflow:scroll;
+  overflow-x:hidden;
+}
+
+.tips-card {
+  width: 90%;
+  border: 2px;
+  border-radius: 10px;
+  border-color: rgba(160, 190, 248, 0.6);
+  background-color: white;
+  border-style: solid;
+  background-image: linear-gradient(to right, rgba(160, 190, 248, 0.6), rgba(181, 240, 240, 0.6));
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.tips-card:visited { text-decoration: none; }
+
+.tips-card img {
+  height: 272px;
+  max-width: 100%;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  margin: 0 0 0 0;
+}
+
+.tips-card h3 {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: rgba(0, 0, 0, 0.7);
+}
