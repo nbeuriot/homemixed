@@ -1,10 +1,12 @@
+// changed the grid to fit our arrows better
 .next-grid {
     display: grid;
-    grid-template-columns: 155px 155px;
+    grid-template-columns: 213px 155px;
     grid-gap: 16px;
     align-items: center;
-    justify-content: center;
-    padding-top: 30px;
+    justify-content: space-between;
+    padding-top: 50px;
+    margin-left: 43px;
 }
 
 .next-grid-ingredients {
@@ -19,7 +21,7 @@
 // the button for nexting
 .next-button {
     height: 60px !important;
-    width: 150px !important;
+    width: 70px !important;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -34,6 +36,14 @@
     // to right, #A0BEF8 , #B5F0F0
   }
 
+  .next-button:hover {
+    box-shadow: none;
+    background-image: linear-gradient(to right, rgba(160, 190, 248, .9) , rgba(181, 240, 240, .9));
+    text-decoration: none;
+    color: #000000;
+
+  }
+
   .next-button-invisible {
     height: 60px !important;
     width: 150px !important;
@@ -46,4 +56,5 @@
     background-color: transparent;
     background-size: cover;
     text-align: center;
+    text-decoration: none;
   }
