@@ -1,0 +1,29 @@
+
+.assistant-headings {
+    padding-top: 24px;
+    justify-content: center;
+    align-self: auto;
+    padding-left: 20px;
+    padding-right: 24px;
+    position: sticky;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+
+.assistant-headings2 {
+    padding-top: 24px;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 24px;
+    position: sticky;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+
+    .delete {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+    }
+}
