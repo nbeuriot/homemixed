@@ -21,18 +21,16 @@
         <p><%= @cocktail.recipe %></p>
     </div>
 
-    <div class="favorite" data-favorite-favorited-class="favorited">
-
-      <%= simple_form_for([@favorite],
-        data: {
-          favorite_target: "likeable",
-          action: "submit->favorite#createFavorite"
-        }) do |f|
-      %>
-      <%= f.button :submit %>
-    <!-- [...] -->
+    <% if current_user.favorites.find_by(cocktail_id: @cocktail.id).nil? %>
+      <%= link_to favorites_path(id: @cocktail.id), data: { turbo_method: :post } do %>
+        <div class="favorite" data-favorite-cocktail-value="<%= @cocktail.id %>" data-action="click->favorite#createFavorite" data-controller="favorite" data-favorite-favorited-class="favorited">
+        </div>
       <% end %>
-    </div>
-
+    <% else %>
+      <%= link_to favorite_path(current_user.favorites.find_by(cocktail_id: @cocktail.id)), data: { turbo_method: :delete } do %>
+        <div class="favorited" data-favorite-cocktail-value="<%= @cocktail.id %>" data-action="click->favorite#createFavorite" data-controller="favorite" data-favorite-favorited-class="favorited">
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
