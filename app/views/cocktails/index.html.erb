@@ -5,10 +5,10 @@
       params[:query],
       class: "form-control",
       placeholder: "find a cocktail"
-    %> 
-    <%# <%= submit_tag "find", class: "btn btn-primary" %> 
-  <%# <% end %> 
-<%# </div> %> 
+    %>
+    <%# <%= submit_tag "find", class: "btn btn-primary" %>
+  <%# <% end %>
+<%# </div> %>
 <%# begining of styling %>
 
 
@@ -67,8 +67,12 @@
             data-add-to-bar-id-value="<%= cocktail.id %>" class="cocktail_card">
 
               <div class="cocktail-description">
-                <div class="cocktail-card-font"><%= cocktail.name.downcase %></div>
-                <div class="recipe"><%= cocktail.recipe %></div>
+                <div class="cocktail-card-font">
+                  <%= cocktail.name.downcase %>
+                </div>
+                <div class="recipe">
+                  <%= cocktail.recipe.truncate(70) %>
+                </div>
               </div>
             </div>
           </div>
