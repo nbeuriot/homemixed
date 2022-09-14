@@ -16,9 +16,9 @@ class FavoritesController < ApplicationController
     if @favorite.save
       redirect_to cocktail_path(@cocktail)
     end
-    respond_to do |format|
-      format.text { "okay" }
-    end
+    # respond_to do |format|
+    #   format.text { "okay" }
+    # end
   end
 
   def destroy
