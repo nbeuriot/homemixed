@@ -32,3 +32,9 @@
 @import "components/_searchbar";
 @import "components/assistant-headings";
 @import "components/_tips";
+
+body {
+  min-height: 120vh;
+  background-color: #EEEEEE;
+}
+

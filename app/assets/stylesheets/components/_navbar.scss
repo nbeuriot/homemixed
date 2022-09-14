@@ -29,17 +29,11 @@ nav a {
 
 nav a:active {
   color: linear-gradient(to right, rgba(160, 190, 248, .6) , rgba(181, 240, 240, .6));
+  box-shadow: none;
+  background-image: linear-gradient(to right, rgba(160, 190, 248, .9) , rgba(181, 240, 240, .9));
+  text-decoration: none;
 }
 
-nav a:hover {
-  .next-button:hover {
-    box-shadow: none;
-    background-image: linear-gradient(to right, rgba(160, 190, 248, .9) , rgba(181, 240, 240, .9));
-    text-decoration: none;
-    color: #000000;
-
-  }
-}
 
 .wrapper {
   display: flex;
