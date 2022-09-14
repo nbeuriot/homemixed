@@ -5,7 +5,9 @@
       <h1 class="boxword">spirits</h1>
     </div>
     <div>
-      <h1 class="boxword-clear">ingredients</h1>
+      <a href="/non_spirits" style="text-decoration: none; color: black;">
+        <h1 class="boxword-clear">ingredients</h1>
+      </a>
     </div>
   </div>
 
@@ -30,7 +32,7 @@
           <% if !@ingredients.nil? %>
             <% @ingredients.each do |ingredient| %>
               <%= button_to add_ingredients_path(ingredient), method: :post, class: "remove-border" do %>
-                <div class="spirit-cards" style="background-image: url('<%= cl_image_path(ingredient.photo.key) %>');">
+                <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(ingredient.photo.key) %>');">
                   <h4><%= ingredient.name %></h4>
                 </div>
               <% end %>
@@ -47,7 +49,7 @@
     <%@spirits.each do |spirit| %>
       <!-- these cards will have the background image we chose with the text centered -->
       <%= button_to add_ingredients_path(spirit), method: :post, class: "remove-border" do %>
-        <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path(spirit.photo.key) %>');">
+        <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(spirit.photo.key) %>');">
           <%= spirit.name.downcase %>
         </div>
       <% end %>

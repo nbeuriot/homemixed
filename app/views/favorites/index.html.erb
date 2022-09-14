@@ -1,6 +1,12 @@
-<div class="container">
-  <h1>Your Favorites</h1>
+<p class="home-page-h2">Your Favorites</p>
+
+
+<div class="ready-grid">
   <% @favorites.each do |favorite| %>
-    <%= favorite %>
+    <%= link_to cocktail_path(favorite.cocktail) do %>
+      <div class="ready-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path(favorite.cocktail.photo.key) %>');">
+        <%= favorite.cocktail.name.downcase %>
+      </div>
+    <% end %>
   <% end %>
 </div>
