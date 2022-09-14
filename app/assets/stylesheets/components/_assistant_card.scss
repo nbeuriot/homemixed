@@ -1,6 +1,6 @@
 .assistant-cards {
-    height: 110px !important;
-    width: 375px !important;
+    height: 125px !important;
+    width: 356px !important;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -8,8 +8,8 @@
     font-size: 18px !important;
     color: #000000;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    margin-top: 7px;
-    margin-bottom: 7px;
+    margin-top: 10px;
+    margin-bottom: 30px;
     background-image: linear-gradient(to right, rgba(160, 190, 248, .6) , rgba(181, 240, 240, .6));
   }
 
@@ -19,7 +19,8 @@
   }
 
   .page-name {
-    margin-top: 30px;
+    margin-left: 12px;
+    margin-bottom: 10%;
     font-weight: bold;
   }
 
