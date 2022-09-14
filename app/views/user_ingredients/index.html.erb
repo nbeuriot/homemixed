@@ -5,7 +5,7 @@
    <div class="spirit-grid">
       <% @user_ingredients.each do |ingredient| %>
         <!-- these cards will have the background image we chose with the text centered -->
-          <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path(ingredient.ingredient.photo.key) %>');">
+          <div class="spirit-cards-assistant" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path(ingredient.ingredient.photo.key) %>');">
 
               <i class="fa-solid fa-circle-minus fa-lg fa-shake delete-this" style="--fa-animation-duration: 3s"></i>
 
