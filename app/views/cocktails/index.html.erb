@@ -5,18 +5,34 @@
       params[:query],
       class: "form-control",
       placeholder: "find a cocktail"
-    %>
-    <%# <%= submit_tag "find", class: "btn btn-primary" %>
-  <%# <% end %>
-<%# </div> %>
+    %> 
+    <%# <%= submit_tag "find", class: "btn btn-primary" %> 
+  <%# <% end %> 
+<%# </div> %> 
 <%# begining of styling %>
+
+  <div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-8">
+
+        <div class="search-bar">
+  <%= form_with url: cocktails_path, method: :get, class: "d-flex my-3" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "find a cocktail"
+    %>
+            <%= button_tag type: 'submit', class: "btn search-button" do %>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+  </div>
 
 
 <%# new search bar %>
-
-  <div class="assistant-headings">
-    <h1 class="boxword">cocktails</h1>
-  </div>
 
   <div>
     <div class="container">
@@ -67,12 +83,8 @@
             data-add-to-bar-id-value="<%= cocktail.id %>" class="cocktail_card">
 
               <div class="cocktail-description">
-                <div class="cocktail-card-font">
-                  <%= cocktail.name.downcase %>
-                </div>
-                <div class="recipe">
-                  <%= cocktail.recipe.truncate(70) %>
-                </div>
+                <div class="cocktail-card-font"><%= cocktail.name.downcase %></div>
+                <div class="recipe"><%= cocktail.recipe %></div>
               </div>
             </div>
           </div>
