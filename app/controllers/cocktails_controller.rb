@@ -43,9 +43,13 @@ class CocktailsController < ApplicationController
   def show
     @cocktail = Cocktail.find(params[:id])
     @favorite = Favorite.new
+    @ingredient_list = @cocktail.ingredients.all
+    text = @cocktail.recipe
+    ps = PragmaticSegmenter::Segmenter.new(text: text)
+    @recipe_steps = ps.segment
   end
 
   def tips
-    
+
   end
 end
