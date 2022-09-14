@@ -1,14 +1,10 @@
-.ready-grid {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
+.favorite-title {
+  margin-left: 10px;
 }
 
-.ready-card {
-  height: 205px !important;
-  width: 360px !important;
+.favorite-cocktail-card {
+  height: 375px !important;
+  width: 353px !important;
   border-radius: 20px;
   padding: 15px;
   margin: 5px;
@@ -17,8 +13,9 @@
   justify-content: center;
   font-size: 22px !important;
   color: #FFFFFF;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: black;
   background-size: cover;
   text-align: center;
+  margin-bottom: 20px;
 }
