@@ -2,8 +2,8 @@
   <!-- div to contain entire card -->
   <div class="cocktail-show-card">
 
-    <div class="cocktail-image">
-      <%= cl_image_tag @cocktail.photo.key, height: 250, width: 365, crop: :fill, radius: 60  %>
+    <div class="cocktail-image" style="border-radius: 20px">
+      <%= cl_image_tag @cocktail.photo.key, height: 250, width: 365, crop: :fill %>
     </div>
 
     <div class="cocktail-desc">
@@ -15,10 +15,8 @@
     </div>
 
     <div class="cocktail-instructions">
-        <p>Fizzy mint lime drink that's a bit sweet.<br>
-          Incredibly refreshing and extremely easy to drink!</p>
-          <h2>how to make</h2>
-        <p><%= @cocktail.recipe %></p>
+      <h2>Instructions</h2>
+      <p><%= @cocktail.recipe %></p>
     </div>
 
     <% if current_user.favorites.find_by(cocktail_id: @cocktail.id).nil? %>
