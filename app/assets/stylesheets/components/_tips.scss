@@ -1,23 +1,26 @@
 .tips-center {
-  width: 99%;
+  width: 100%;
   height: 780px;
   display: grid;
+  gap: 20px;
   place-items: center;
   overflow:scroll;
   overflow-x:hidden;
+  margin-bottom: 50px;
+}
+
+.tip-page-title {
+  margin-left: 15px;
+  margin-bottom: 15px;
 }
 
 .tips-card {
-  width: 90%;
-  border: 2px;
-  border-radius: 10px;
-  border-color: rgba(160, 190, 248, 0.6);
-  background-color: white;
-  border-style: solid;
+  width: 100%;
   background-image: linear-gradient(to right, rgba(160, 190, 248, 0.6), rgba(181, 240, 240, 0.6));
   text-decoration: none;
   margin-bottom: 10px;
   color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .tips-card:visited { text-decoration: none; }
@@ -25,7 +28,6 @@
 .tips-card img {
   height: 272px;
   max-width: 100%;
-  border-radius: 10px 10px 0 0;
   object-fit: cover;
   margin: 0 0 0 0;
 }
