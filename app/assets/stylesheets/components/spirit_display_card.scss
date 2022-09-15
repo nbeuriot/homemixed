@@ -1,11 +1,13 @@
 // the grid for displaying spirits or similar cards
 .spirit-grid {
     display: grid;
-    grid-template-columns: 155px 155px;
-    grid-gap: 16px;
+    grid-template-columns: 165px 160px;
+    grid-gap: 20px;
     align-items: center;
     justify-content: center;
-    padding-top: 15px;
+    padding-top: 0px;
+    padding-left: 7px;
+    row-gap: 1px;
 }
 
 // the card for spirits
@@ -22,8 +24,8 @@
   }
 
   .spirit-cards {
-    height: 117px !important;
-    width: 150px !important;
+    height: 100px;
+    width: 40vw;
     border-radius: 20px;
     font-size: 24px !important;
     color: #FFFFFF;
@@ -34,7 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-   
+
   }
 
 

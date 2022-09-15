@@ -5,14 +5,14 @@
     grid-gap: 16px;
     align-items: center;
     justify-content: space-between;
-    padding-top: 30px;
+    padding-top: 10px;
     margin-left: 43px;
 }
 
 .next-grid-ingredients {
     display: grid;
-    grid-template-columns: 155px 155px;
-    grid-gap: 35px;
+    grid-template-columns: 165px 160px;
+    grid-gap: 30px;
     align-items: center;
     justify-content: center;
     padding-top: 26px;
@@ -20,19 +20,18 @@
 
 // the button for nexting
 .next-button {
-    height: 60px !important;
-    width: 70px !important;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px !important;
-    color: #000000;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    background-image: linear-gradient(to right, rgba(160, 190, 248, .6) , rgba(181, 240, 240, .6));
-    background-size: cover;
-    text-align: center;
-    text-decoration: none;
+  border-radius: 10px 10px 10px 10px;
+  background-image: linear-gradient(to right, rgba(160, 190, 248, 0.9), rgba(181, 240, 240, 0.9));
+  border: 0;
+  width: 60px;
+  position: relative;
+  left: 00px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-decoration: none;
+  padding: 7px;
     // to right, #A0BEF8 , #B5F0F0
   }
 
