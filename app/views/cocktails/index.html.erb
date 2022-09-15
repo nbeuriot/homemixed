@@ -49,75 +49,14 @@
     </div>
   </div>
 
-<div class="cocktail-grid">
-
-  <div class="container-carousel">
-
-    <% if params[:query].present? %>
-    <h6><%= @cocktails.count %> <%= "result".pluralize(@cocktails.count) %></h6>
-    <% end %>
-    <div id="cocktail-search" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-
-        <% @cocktails.each_with_index do |cocktail, index| %>
-          <% is_first_result = index == 0 %>
-          <div class="carousel-item <%= is_first_result ? "active" : "" %>" style="background-image: url('<%= cl_image_path cocktail.photo.key%>')">
-            <%# these cards will have the background image we chose with the text centered %>
-            <div data-controller="add-to-favourite" data-action="click->add-to-favourite#create add-to-favourite#slide"
-            data-add-to-bar-id-value="<%= cocktail.id %>" class="cocktail_card">
-
-              <div class="cocktail-description">
-                <div class="cocktail-card-font">
-                  <%= cocktail.name.downcase %>
-                </div>
-                <div class="recipe">
-                  <%= cocktail.recipe.truncate(70) %>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#cocktail-search" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#cocktail-search" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-
-</div>
-<%# end of styling %>
-
-
-<!-- Our  cards that will be displayed in a grid -->
-  <!-- link to css app/assets/stylesheets/_long_card_cocktails.scss
-
-
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-     <%@cocktails.each do |cocktail| %>
-       these cards will have the background image we chose with the text centered
-      <div data-controller="add-to-favourite" data-action="click->add-to-favourite#create add-to-favourite#slide" data-add-to-bar-id-value="<%= cocktail.id %>" class="cocktail_card">
-        <div class="img-thumbnail" class="rounded">
-          <%= cl_image_tag cocktail.photo.key, height: 60, width: 60, crop: :fill %>
-        <div class="cocktail-description">
-            <div class="cocktail-name">
-                <%= cocktail.name.downcase %>
-            </div>
-            <div class="recipe">
-                <%= cocktail.recipe.truncate(60) %>
-            <% end %>
-            </div>
+     <div class="spirit-grid">
+    <!-- Our spirits cards that will be displayed in a grid -->
+    <%@cocktails.each do |cocktail| %>
+      <!-- these cards will have the background image we chose with the text centered -->
+      <%= button_to add_ingredients_path(cocktail), method: :post, class: "remove-border" do %>
+        <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(cocktail.photo.key) %>');">
+          <%= cocktail.name.downcase %>
         </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
   </div>
-</div>
--->
