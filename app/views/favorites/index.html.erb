@@ -1,11 +1,17 @@
-<h1 class="favorite-title">Your Favorites</h1>
-
+<div class="margin-for-fav-page">
+  <h1 class="favorite-title">Your Favorites</h1>
   <% @favorites.each do |favorite| %>
-    <div class="favorite-cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path(favorite.cocktail.photo.key) %>');">
+    <div class="favorite-cocktail-card" style="background-image: url('<%= cl_image_path(favorite.cocktail.photo.key) %>');">
+
       <div class="fav-desc-container">
         <%= link_to cocktail_path(favorite.cocktail) do %>
           <%= favorite.cocktail.name.downcase %>
         <% end %>
       </div>
     </div>
+      <%= link_to favorite_path(current_user.favorites.find_by(cocktail_id: favorite.cocktail_id)), data: { turbo_method: :delete } do %>
+        <div class="fav-card-favorited" data-favorite-cocktail-value="<%= favorite.cocktail_id %>" data-action="click->favorite#createFavorite" data-controller="favorite" data-favorite-favorited-class="favorited">
+        </div>
+      <% end %>
   <% end %>
+</div>

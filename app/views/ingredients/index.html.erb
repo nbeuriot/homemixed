@@ -1,43 +1,45 @@
-<div class="contianer">
+<div class="container">
   <!-- Our top buttons to filter spirits or ingredients -->
-  <div class="index-grid">
-    <div>
-      <h1 class="boxword">spirits</h1>
+  <div class="assistant-headings">
+    <div class="index-grid">
+      <div>
+        <h1 class="boxword">spirits</h1>
+      </div>
+      <div>
+        <a href="/non_spirits" style="text-decoration: none; color: black;">
+          <h1 class="boxword-clear">ingredients</h1>
+        </a>
+      </div>
     </div>
+
+    <!-- search bar goes here -->
     <div>
-      <a href="/non_spirits" style="text-decoration: none; color: black;">
-        <h1 class="boxword-clear">ingredients</h1>
-      </a>
-    </div>
-  </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-sm-8">
 
-  <!-- search bar goes here -->
-  <div>
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-sm-8">
-
-          <%= form_with url: ingredients_path, method: :get, class: "d-flex my-3" do %>
-            <%= text_field_tag :query,
-              params[:query], autocomplete: 'off',
-              class: "form-control",
-              placeholder: "search for spirit"
-            %>
-            <%= button_tag type: 'submit', class: "btn search-button" do %>
-              <i class="fa-solid fa-magnifying-glass"></i>
-            <% end %>
-          <% end %>
-
-        <div class="spirit-grid">
-          <% if !@ingredients.nil? %>
-            <% @ingredients.each do |ingredient| %>
-              <%= button_to add_ingredients_path(ingredient), method: :post, class: "remove-border" do %>
-                <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(ingredient.photo.key) %>');">
-                  <h4><%= ingredient.name %></h4>
-                </div>
+            <%= form_with url: ingredients_path, method: :get, class: "d-flex my-3" do %>
+              <%= text_field_tag :query,
+                params[:query], autocomplete: 'off',
+                class: "form-control",
+                placeholder: "search for spirit"
+              %>
+              <%= button_tag type: 'submit', class: "btn search-button" do %>
+                <i class="fa-solid fa-magnifying-glass"></i>
               <% end %>
             <% end %>
-          <% end %>
+
+          <div class="spirit-grid">
+            <% if !@ingredients.nil? %>
+              <% @ingredients.each do |ingredient| %>
+                <%= button_to add_ingredients_path(ingredient), method: :post, class: "remove-border" do %>
+                  <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(ingredient.photo.key) %>');">
+                    <h4><%= ingredient.name %></h4>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+            </div>
           </div>
         </div>
       </div>
