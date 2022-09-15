@@ -3,7 +3,6 @@
     display: grid;
     grid-template-columns: 213px 155px;
     grid-gap: 16px;
-    align-items: center;
     justify-content: space-between;
     padding-top: 10px;
     margin-left: 43px;
@@ -32,14 +31,15 @@
   align-content: center;
   text-decoration: none;
   padding: 7px;
+  margin-top: 12px;
     // to right, #A0BEF8 , #B5F0F0
   }
 
   .next-button:hover {
     box-shadow: none;
-    background-image: linear-gradient(to right, rgba(160, 190, 248, .9) , rgba(181, 240, 240, .9));
     text-decoration: none;
-    color: #000000;
+    height: 29px;
+    width: 57px;
 
   }
 
