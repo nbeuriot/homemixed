@@ -12,8 +12,8 @@
 
 // the card for spirits
 .spirit-cards-assistant {
-    height: 117px !important;
-    width: 150px !important;
+    height: 100px;
+    width: 40vw;
     border-radius: 20px;
     font-size: 24px !important;
     color: #FFFFFF;
@@ -42,16 +42,15 @@
 
   .spirit-cards:hover {
     box-shadow: none;
-    height: 115px !important;
-    width: 146px !important;
+    height: 97px;
+    width: 39vw;
   }
 
 
   .spirit-cards-assistant:hover {
     box-shadow: none;
-    height: 115px !important;
-    width: 146px !important;
-
+    height: 97px;
+    width: 39vw;
   }
 
 
