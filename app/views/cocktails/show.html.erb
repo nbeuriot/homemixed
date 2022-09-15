@@ -1,34 +1,44 @@
-<div class="container">
-  <!-- div to contain entire card -->
-  <div class="cocktail-show-card">
+<!-- div to contain entire card -->
+<div class="cocktail-show-card">
 
-    <div class="cocktail-image" style="border-radius: 20px">
-      <%= cl_image_tag @cocktail.photo.key, height: 250, width: 365, crop: :fill %>
+  <div class="cocktail-image" style="border-radius: 20px">
+    <%= cl_image_tag @cocktail.photo.key, height: 250, width: 375, crop: :fill %>
+  </div>
+
+  <div class="cocktail-desc">
+    <h1><%= @cocktail.name.downcase %></h1>
+    <hr class="line">
+    <div class="category-container">
+      <p class="cocktail-category"><%= @cocktail.category %></p>
     </div>
+  </div>
 
-    <div class="cocktail-desc">
-      <h1><%= @cocktail.name.downcase %></h1>
-      <hr class="line">
-      <div class="category-container">
-        <p class="cocktail-category"><%= @cocktail.category %></p>
+  <div class="ingredients-grid">
+    <% @ingredient_list.each do |ingredient| %>
+      <div class="ingredient">
+        <p class="ingredient-name"><%= ingredient.name %></p>
       </div>
-    </div>
-
-    <div class="cocktail-instructions">
-      <h2>Instructions</h2>
-      <p><%= @cocktail.recipe %></p>
-    </div>
-
-    <% if current_user.favorites.find_by(cocktail_id: @cocktail.id).nil? %>
-      <%= link_to favorites_path(id: @cocktail.id), data: { turbo_method: :post } do %>
-        <div class="favorite" data-favorite-cocktail-value="<%= @cocktail.id %>" data-action="click->favorite#createFavorite" data-controller="favorite" data-favorite-favorited-class="favorited">
-        </div>
-      <% end %>
-    <% else %>
-      <%= link_to favorite_path(current_user.favorites.find_by(cocktail_id: @cocktail.id)), data: { turbo_method: :delete } do %>
-        <div class="favorited" data-favorite-cocktail-value="<%= @cocktail.id %>" data-action="click->favorite#createFavorite" data-controller="favorite" data-favorite-favorited-class="favorited">
-        </div>
-      <% end %>
     <% end %>
   </div>
+
+  <div class="cocktail-instructions">
+    <h2>Instructions</h2>
+      <ol>
+        <% @recipe_steps.each do |sentence| %>
+          <li><%= sentence %></li>
+        <% end %>
+      </ol>
+  </div>
+
+  <% if current_user.favorites.find_by(cocktail_id: @cocktail.id).nil? %>
+    <%= link_to favorites_path(id: @cocktail.id), data: { turbo_method: :post } do %>
+      <div class="favorite" data-favorite-cocktail-value="<%= @cocktail.id %>" data-action="click->favorite#createFavorite" data-controller="favorite" data-favorite-favorited-class="favorited">
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to favorite_path(current_user.favorites.find_by(cocktail_id: @cocktail.id)), data: { turbo_method: :delete } do %>
+      <div class="favorited" data-favorite-cocktail-value="<%= @cocktail.id %>" data-action="click->favorite#createFavorite" data-controller="favorite" data-favorite-favorited-class="favorited">
+      </div>
+    <% end %>
+  <% end %>
 </div>
