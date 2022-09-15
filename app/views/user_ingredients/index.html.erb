@@ -1,8 +1,8 @@
   <div class="assistant-headings">
-    <h1 class="boxword">my bar</h1>
+    <h1 class="boxword margin-bottom">my bar</h1>
   </div>
 
-   <div class="spirit-grid">
+   <div class="spirit-grid margin-bottom-grid">
       <% @user_ingredients.each do |ingredient| %>
         <!-- these cards will have the background image we chose with the text centered -->
           <%= turbo_frame_tag dom_id(ingredient), target: :_top do %>
