@@ -24,13 +24,16 @@ h1 {
 
 .ingredients-grid {
   max-width: 350px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -20px;
   display: grid;
   gap: 30px;
 }
 
 .ingredient-name {
   margin-bottom: 0px !important;
+  text-align: center;
   background-color: #666666;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -41,16 +44,16 @@ h1 {
 
 .ingredient {
   background-image: linear-gradient(to right, rgba(160, 190, 248, 0.6), rgba(181, 240, 240, 0.6));
-  border-radius: 50%;
-  width: 95px;
-  height: 95px;
+  border-radius: 20px;
+  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .cocktail-instructions {
-  margin-top: 25px;
+  margin-top: 16px;
+  margin-bottom: 100px;
   padding: 10px 20px 0px 20px;
 }
 
