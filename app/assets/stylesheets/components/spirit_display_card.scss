@@ -2,11 +2,12 @@
 .spirit-grid {
     display: grid;
     grid-template-columns: 165px 160px;
-    grid-gap: 20px;
+    grid-gap: 12px;
     align-items: center;
     justify-content: center;
     padding-top: 0px;
     padding-left: 7px;
+    margin-top: 10px;
 }
 
 .margin-bottom-grid {
