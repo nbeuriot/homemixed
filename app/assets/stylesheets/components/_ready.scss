@@ -3,14 +3,13 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 15px;
+  margin-bottom: 80px;
 }
 
 .ready-card {
-  height: 205px !important;
+  height: 360px !important;
   width: 360px !important;
   border-radius: 20px;
-  padding: 15px;
   margin: 5px;
   display: flex;
   align-items: center;
@@ -18,7 +17,6 @@
   font-size: 22px !important;
   color: #FFFFFF;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  background-color: black;
   background-size: cover;
   text-align: center;
 }
