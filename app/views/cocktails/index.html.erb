@@ -10,15 +10,9 @@
   <%# <% end %>
 <%# </div> %>
 <%# begining of styling %>
-
-
 <%# new search bar %>
-
   <div class="assistant-headings">
     <h1 class="boxword">cocktails</h1>
-  </div>
-
-  <div>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-sm-8">
@@ -48,15 +42,14 @@
       </div>
     </div>
   </div>
-
-     <div class="spirit-grid">
-    <!-- Our spirits cards that will be displayed in a grid -->
-      <%@cocktails.each do |cocktail| %>
-      <!-- these cards will have the background image we chose with the text centered -->
-      <%= button_to cocktail_path(cocktail), method: :get, class: "remove-border" do %>
-        <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(cocktail.photo.key) %>');">
-          <%= cocktail.name.downcase %>
-        </div>
-      <% end %>
+  <div class="spirit-grid">
+  <!-- Our spirits cards that will be displayed in a grid -->
+    <%@cocktails.each do |cocktail| %>
+    <!-- these cards will have the background image we chose with the text centered -->
+    <%= button_to cocktail_path(cocktail), method: :get, class: "remove-border" do %>
+      <div class="spirit-cards" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(cocktail.photo.key) %>');">
+        <%= cocktail.name.downcase %>
+      </div>
     <% end %>
-  </div>
+  <% end %>
+</div>
