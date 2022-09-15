@@ -2,8 +2,10 @@
 
   <% @favorites.each do |favorite| %>
     <div class="favorite-cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path(favorite.cocktail.photo.key) %>');">
-      <%= link_to cocktail_path(favorite.cocktail) do %>
-      <%= favorite.cocktail.name.downcase %>
+      <div class="fav-desc-container">
+        <%= link_to cocktail_path(favorite.cocktail) do %>
+          <%= favorite.cocktail.name.downcase %>
+        <% end %>
+      </div>
     </div>
-    <% end %>
   <% end %>
