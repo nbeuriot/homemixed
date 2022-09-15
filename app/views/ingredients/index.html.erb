@@ -19,7 +19,7 @@
 
           <%= form_with url: ingredients_path, method: :get, class: "d-flex my-3" do %>
             <%= text_field_tag :query,
-              params[:query],
+              params[:query], autocomplete: 'off',
               class: "form-control",
               placeholder: "search for spirit"
             %>
