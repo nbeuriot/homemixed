@@ -4,7 +4,7 @@
     grid-template-columns: 213px 155px;
     grid-gap: 16px;
     justify-content: space-between;
-    padding-top: 10px;
+    padding-top: 4px;
     margin-left: 43px;
 }
 
@@ -31,8 +31,9 @@
   align-content: center;
   text-decoration: none;
   padding: 7px;
-  margin-top: 12px;
+  margin-top: 8px;
     // to right, #A0BEF8 , #B5F0F0
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
 
   .next-button:hover {
