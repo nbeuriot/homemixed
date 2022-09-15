@@ -29,7 +29,7 @@
   }
 
   .spirit-cards {
-    height: 100px;
+    height: 100%;
     width: 40vw;
     border-radius: 20px;
     font-size: 24px !important;
@@ -46,8 +46,8 @@
 
   .spirit-cards:hover {
     box-shadow: none;
-    height: 97px;
-    width: 39vw;
+    height: 100%;
+    width: 100%;
   }
 
 
